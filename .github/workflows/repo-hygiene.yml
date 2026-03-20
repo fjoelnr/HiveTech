@@ -1,0 +1,21 @@
+name: Repo Hygiene
+
+on:
+  pull_request:
+    branches: [develop, main]
+  push:
+    branches: [develop]
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Verify required files
+        run: |
+          test -f README.md
+          test -f AGENTS.md
+          test -f docs/STATUS.md
+          test -f src/config_template.h
+          test -f .github/CODEOWNERS
