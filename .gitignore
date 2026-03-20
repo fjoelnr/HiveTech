@@ -1,3 +1,9 @@
+# Exclude local configuration and IDE/build outputs
+src/config.h
+src/credentials.h
+.pio/
+.vscode/
+
 # Prerequisites
 *.d
 
@@ -30,3 +36,7 @@
 *.exe
 *.out
 *.app
+.pioenvs
+.piolibdeps
+.clang_complete
+.gcc-flags.json
