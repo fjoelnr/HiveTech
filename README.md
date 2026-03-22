@@ -24,6 +24,14 @@ See [docs/STATUS.md](docs/STATUS.md) for the current project state.
 
 The firmware expects a local `src/config.h` file that is not committed. Start from [src/config_template.h](src/config_template.h) and adjust the values for your network and MQTT broker.
 
+For compile-only validation, the repository now supports a temporary-config path:
+
+```bash
+python scripts/compile_check.py
+```
+
+If `src/config.h` is missing, the script copies `src/config_template.h`, runs `platformio run`, and removes the temporary file again.
+
 Additional operating context now lives in:
 
 - [docs/hardware.md](docs/hardware.md)
@@ -42,6 +50,6 @@ Additional operating context now lives in:
 ## Immediate Next Steps
 
 1. Replace the legacy `config.h` flow with a clearer credentials/config separation.
-2. Add a repeatable local build check that uses placeholder config for compile-only validation.
+2. Add a real hardware smoke-test routine after the new compile-only validation path.
 3. Decide which parts should remain standalone versus moving into `SkySentinel`.
 4. Add hive-specific telemetry beyond the current BME280 baseline once the hardware scope is stable.
