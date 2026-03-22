@@ -24,6 +24,14 @@ See [docs/STATUS.md](docs/STATUS.md) for the current project state.
 
 The firmware expects a local `src/config.h` file that is not committed. Start from [src/config_template.h](src/config_template.h) and adjust the values for your network and MQTT broker.
 
+Additional operating context now lives in:
+
+- [docs/hardware.md](docs/hardware.md)
+- [docs/operations.md](docs/operations.md)
+- [docs/topic-contracts.md](docs/topic-contracts.md)
+- [docs/verification.md](docs/verification.md)
+- [anr.profile.yaml](anr.profile.yaml)
+
 ## Topics Published
 
 - `HT_BME280_Temperature`
@@ -34,6 +42,6 @@ The firmware expects a local `src/config.h` file that is not committed. Start fr
 ## Immediate Next Steps
 
 1. Replace the legacy `config.h` flow with a clearer credentials/config separation.
-2. Document the intended hardware wiring for the hive node.
+2. Add a repeatable local build check that uses placeholder config for compile-only validation.
 3. Decide which parts should remain standalone versus moving into `SkySentinel`.
-4. Add a simple validation/build workflow once the local config path is standardized.
+4. Add hive-specific telemetry beyond the current BME280 baseline once the hardware scope is stable.

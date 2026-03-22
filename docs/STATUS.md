@@ -9,19 +9,20 @@ HiveTech is an ESP32 firmware prototype for live beehive monitoring. It reads BM
 - Revival candidate with real firmware code, not just a stub
 - Public again by explicit portfolio decision
 - Still uses a legacy `config.h` include path
+- PlatformIO/IoT profile context is now committed in `anr.profile.yaml` plus focused hardware and operations docs
 - No modern CI/build validation yet
 - Local developer deployment settings are still present outside committed templates
 
 ## Known Gaps
 
-- No committed configuration template existed before this cleanup pass
-- No README or public-facing operational context existed
-- Hardware wiring and deployment procedure are not yet documented
-- MQTT contract is still implicit in code
+- The repo still relies on a simple local `config.h` include model
+- Hardware wiring is documented only to the level visible in current firmware assumptions
+- Deployment is still local and OTA-target specific
+- MQTT contract is documented but still topic-only, without retained/availability semantics
 
 ## Next Milestone
 
-Stabilize the public repo baseline, then decide whether HiveTech becomes:
+Stabilize the revived public firmware baseline, then decide whether HiveTech becomes:
 
 1. a standalone beehive telemetry node, or
 2. a domain-specific branch of the broader SkySentinel ecosystem.
