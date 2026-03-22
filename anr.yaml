@@ -1,0 +1,8 @@
+anr_version: "0.1"
+context_index: .agents/context-index.md
+detected_directories:
+  - src
+  - lib
+  - scripts
+  - tests
+  - docs

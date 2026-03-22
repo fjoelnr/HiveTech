@@ -1,0 +1,20 @@
+profile_id: platformio-iot
+category: firmware
+focus:
+  - platformio
+  - hardware-validation
+  - device-config
+  - telemetry
+recommended_docs:
+  - docs/hardware.md
+  - docs/verification.md
+  - docs/operations.md
+  - docs/topic-contracts.md
+recommended_skills:
+  - embedded-debugging
+  - hardware-bringup
+  - telemetry-review
+recommended_guardrails:
+  - secret-handling
+  - hardware-assumption-boundaries
+  - deployment-safety
