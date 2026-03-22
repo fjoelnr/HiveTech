@@ -6,8 +6,8 @@ Keep firmware changes reproducible and separate "compiles locally" from "works o
 
 ## Minimum Checks
 
-1. Copy `src/config_template.h` to local `src/config.h` or provide an equivalent local config file.
-2. Run `platformio run` for `env:esp32dev`.
+1. Run `python scripts/compile_check.py` for a compile-only check.
+2. If you need device-specific validation, provide a real local `src/config.h`.
 3. Flash or OTA-update the node using the local deployment path from `platformio.ini`.
 4. Confirm serial boot output reaches:
    - Wi-Fi connect
@@ -22,5 +22,5 @@ Keep firmware changes reproducible and separate "compiles locally" from "works o
 
 ## Separation Of Checks
 
-- Compile-only validation is useful for refactors and dependency changes.
+- Compile-only validation is now available via `python scripts/compile_check.py`.
 - Real hardware validation is still mandatory after sensor, networking, OTA, or sleep-logic changes.

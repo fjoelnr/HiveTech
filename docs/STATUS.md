@@ -10,7 +10,8 @@ HiveTech is an ESP32 firmware prototype for live beehive monitoring. It reads BM
 - Public again by explicit portfolio decision
 - Still uses a legacy `config.h` include path
 - PlatformIO/IoT profile context is now committed in `anr.profile.yaml` plus focused hardware and operations docs
-- No modern CI/build validation yet
+- Compile-only validation now works via `python scripts/compile_check.py`
+- CI build validation is defined in `.github/workflows/build.yml`
 - Local developer deployment settings are still present outside committed templates
 
 ## Known Gaps
@@ -19,6 +20,7 @@ HiveTech is an ESP32 firmware prototype for live beehive monitoring. It reads BM
 - Hardware wiring is documented only to the level visible in current firmware assumptions
 - Deployment is still local and OTA-target specific
 - MQTT contract is documented but still topic-only, without retained/availability semantics
+- Real hardware smoke validation is still manual
 
 ## Next Milestone
 
