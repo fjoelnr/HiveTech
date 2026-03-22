@@ -15,6 +15,12 @@ Current runtime flow:
 
 `platformio.ini` currently contains a developer-local `upload_port`. Treat that as local machine state, not as committed team-wide truth.
 
+## Build And Validation
+
+- `python scripts/compile_check.py` is the default compile-only validation path
+- the script creates a temporary `src/config.h` from `src/config_template.h` when needed
+- CI uses the same path so local and remote validation stay aligned
+
 ## Safety Rules
 
 - separate local credentials from committed templates
