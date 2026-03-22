@@ -32,6 +32,14 @@ python scripts/compile_check.py
 
 If `src/config.h` is missing, the script copies `src/config_template.h`, runs `platformio run`, and removes the temporary file again.
 
+For real node validation before OTA upload:
+
+```bash
+python scripts/hardware_smoke_check.py
+```
+
+The preflight checks whether `src/config.h` exists, whether it still contains placeholder values, whether the configured OTA target is reachable, and whether the configured MQTT broker answers on port `1883`.
+
 Additional operating context now lives in:
 
 - [docs/hardware.md](docs/hardware.md)
@@ -50,6 +58,6 @@ Additional operating context now lives in:
 ## Immediate Next Steps
 
 1. Replace the legacy `config.h` flow with a clearer credentials/config separation.
-2. Add a real hardware smoke-test routine after the new compile-only validation path.
+2. Turn the current hardware preflight into a fuller post-upload smoke workflow with serial/MQTT assertions.
 3. Decide which parts should remain standalone versus moving into `SkySentinel`.
 4. Add hive-specific telemetry beyond the current BME280 baseline once the hardware scope is stable.

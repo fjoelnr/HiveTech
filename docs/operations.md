@@ -18,7 +18,9 @@ Current runtime flow:
 ## Build And Validation
 
 - `python scripts/compile_check.py` is the default compile-only validation path
+- `python scripts/hardware_smoke_check.py` is the preflight path before OTA upload
 - the script creates a temporary `src/config.h` from `src/config_template.h` when needed
+- the hardware preflight checks local config completeness, OTA target reachability, and MQTT broker reachability
 - CI uses the same path so local and remote validation stay aligned
 
 ## Safety Rules
